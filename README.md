@@ -3,6 +3,7 @@
     date -> march 3, 2024
     rn version -> 0.73
     node version -> 18.12.1
+    package installer -> yarn
 
     packages using ->
       husky, eslint, prettier
@@ -63,3 +64,98 @@
 
     - for atomic pattern in react-native ( folder structure )
       [https://medium.com/@prathiba2796/react-native-best-practices-for-organizing-code-with-atomic-folder-structure-131858653eb1]
+
+## 1. init project[https://reactnative.dev/docs/environment-setup] -> for mac
+
+    - just to check to make sure -> *npm uninstall -g react-native-cli @react-native-community/cli
+    - npx react-native@latest init <ProjectName>
+
+## 2. start project
+
+    - yarn ios or yarn android
+
+## 3. eslint-prettier-husky-lint-staged[https://deku.posstree.com/en/react-native/eslint-prettier-husky-lint-staged/]
+
+    - npx eslint --init
+      - answer questiosn accordingly
+
+    - for additional detailed configurations
+      - yarn add -D eslint-plugin-react @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-plugin-react-hooks
+
+    - modify eslintrc.js
+      - module.exports = {
+        env: {
+          es6: true,
+          node: true,
+          jest: true,
+        },
+        extends: [
+          'eslint:recommended',
+          'plugin:react/recommended',
+          'plugin:react-hooks/recommended',
+          'plugin:@typescript-eslint/eslint-recommended',
+          'plugin:@typescript-eslint/recommended',
+          'plugin:@typescript-eslint/recommended-requiring-type-checking',
+        ],
+        ...
+        parserOptions: {
+          project: './tsconfig.json',
+          ...
+        },
+        plugins: ['react', 'react-hooks', '@typescript-eslint'],
+        ...
+        rules: {
+          indent: ['error', 2, { SwitchCase: 1 }],
+          quotes: ['error', 'single', { avoidEscape: true }],
+          ...,
+          'no-empty-function': 'off',
+          '@typescript-eslint/no-empty-function': 'off',
+          'react/display-name': 'off',
+          'react/prop-types': 'off',
+        },
+        settings: {
+          react: {
+            version: 'detect',
+          },
+        },
+      };
+
+## 4. install prettier
+
+    yarn add -D prettier eslint-plugin-prettier
+    - configure prettier file
+      - module.exports = {
+          arrowParens: 'avoid',
+          bracketSameLine: true,
+          bracketSpacing: true,
+          singleQuote: true,
+          trailingComma: 'all',
+          semi: false,
+          printWidth: 100,
+        }
+
+    add prettier to rules in eslintrc.js
+
+## 5. install husky
+
+    yarn add -D husky lint-staged
+
+    add in package.json
+      - {
+
+        ...
+        "lint-staged": {
+        "src/**/\*.{ts,tsx}": [
+        "eslint --ext .tsx --ext .ts src/ --fix"
+        ],
+        "./src/**": [
+        "prettier --write ."
+        ]
+        },
+        "husky": {
+        "hooks": {
+        "pre-commit": "lint-staged"
+        }
+        },
+        ...
+        }
