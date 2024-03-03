@@ -214,3 +214,53 @@
         }
       }
     }
+
+    metro.config.js
+    const { getDefaultConfig, mergeConfig } = require('@react-native/metro-config')
+
+    /**
+    * Metro configuration
+    * https://facebook.github.io/metro/docs/configuration
+    *
+    * @type {import('metro-config').MetroConfig}
+    */
+
+    const assetExts = require('metro-config/src/defaults/defaults').assetExts,
+      sourceExts = require('metro-config/src/defaults/defaults').sourceExts
+
+    const config = {
+      transformer: {
+        getTransformOptions: async () => ({
+          transform: {
+            experimentalImportSupport: false,
+            inlineRequires: true,
+          },
+          resolver: {
+            sourceExts: ['jsx', 'js', 'ts', 'tsx', 'cjs'],
+          },
+        }),
+        // babelTransformerPath: require.resolve('react-native-svg-transformer'),
+      },
+      resolver: {
+        assetExts: assetExts.filter(ext => ext !== 'svg'),
+        sourceExts: [...sourceExts, 'svg'],
+      },
+    }
+
+    module.exports = mergeConfig(getDefaultConfig(__dirname), config)
+
+    add :
+      "resolutions": {
+        "**/metro-file-map": "0.80.6"
+      }
+
+    to package.json
+
+    remember to reset-cache
+
+## react-native-firebase setup[https://rnfirebase.io/]
+
+    - yarn add @react-native-firebase/app
+
+     follow android setup guide
+     folow is setup guide
