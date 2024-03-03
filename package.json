@@ -10,6 +10,19 @@
     "test": "jest",
     "format": "prettier --check ./source"
   },
+  "lint-staged": {
+    "source/**/*.{ts,tsx}": [
+      "eslint --ext .tsx --ext .ts source/ --fix"
+    ],
+    "./source/**": [
+      "prettier --write ."
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "dependencies": {
     "react": "18.2.0",
     "react-native": "0.73.5"
@@ -43,18 +56,5 @@
   },
   "engines": {
     "node": ">=18"
-  },
-  "lint-staged": {
-    "source/**/*.{ts,tsx}": [
-      "eslint --ext .tsx --ext .ts source/ --fix"
-    ],
-    "./source/**": [
-      "prettier --write ."
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   }
 }
