@@ -69,6 +69,6 @@
     "node": ">=18"
   },
   "resolutions": {
-    "**/metro-file-map": "0.80.5"
+    "**/metro-file-map": "0.80.6"
   }
 }

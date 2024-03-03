@@ -8,7 +8,7 @@
       "@config/*": ["./source/config/*"],
       "@constants/*": ["./source/constants/*"],
       "@contexts/*": ["./source/contexts/*"],
-      "@navigation/*": ["./source/navigation/*"],
+      "@navigators/*": ["./source/navigators/*"],
       "@screens/*": ["./source/screens/*"],
       "@services/*": ["./source/services/*"],
       "@styles/*": ["./source/styles/*"],

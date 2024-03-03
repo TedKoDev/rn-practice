@@ -185,7 +185,7 @@
       // ...
     }
 
-## babel-plugin-module-resolver[https://github.com/tleunen/babel-plugin-module-resolver]
+## babel-plugin-module-resolver[https://github.com/tleunen/babel-plugin-module-resolver] -> NEED TO FIX
 
     yarn add --dev babel-plugin-module-resolver
 
