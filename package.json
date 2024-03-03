@@ -45,10 +45,10 @@
     "node": ">=18"
   },
   "lint-staged": {
-    "src/**/*.{ts,tsx}": [
+    "source/**/*.{ts,tsx}": [
       "eslint --ext .tsx --ext .ts source/ --fix"
     ],
-    "./src/**": [
+    "./source/**": [
       "prettier --write ."
     ]
   },
