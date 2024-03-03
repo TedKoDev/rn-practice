@@ -184,3 +184,33 @@
       }
       // ...
     }
+
+## babel-plugin-module-resolver[https://github.com/tleunen/babel-plugin-module-resolver]
+
+    yarn add --dev babel-plugin-module-resolver
+
+    babel.config.js
+    {
+      "plugins": [
+        ["module-resolver", {
+          "root": ["./src"],
+          "alias": {
+            "test": "./test",
+            "underscore": "lodash"
+          }
+        }]
+      ]
+    }
+
+
+    tsconfig.ts
+    {
+      "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+          "*": ["src/*"],
+          "test/*": ["test/*"],
+          "underscore": ["lodash"]
+        }
+      }
+    }

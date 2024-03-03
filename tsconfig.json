@@ -1,3 +1,26 @@
 {
-  "extends": "@react-native/typescript-config/tsconfig.json"
+  "extends": "@react-native/typescript-config/tsconfig.json",
+  "skipLibCheck": true,
+  "compilerOptions": {
+    "paths": {
+      "@source/*": ["./source/*"],
+      "@components/*": ["./source/components/*"],
+      "@config/*": ["./source/config/*"],
+      "@constants/*": ["./source/constants/*"],
+      "@contexts/*": ["./source/contexts/*"],
+      "@navigation/*": ["./source/navigation/*"],
+      "@screens/*": ["./source/screens/*"],
+      "@services/*": ["./source/services/*"],
+      "@styles/*": ["./source/styles/*"],
+      "@utilities/*": ["./source/utilities/*"],
+      "@hooks/*": ["./source/hooks/*"],
+      "@assets/*": ["./source/assets/*"],
+      "@types/*": ["./source/types/*"],
+      "@theme/*": ["./source/theme/*"],
+      "@stores/*": ["./source/stores/*"],
+      "@models/*": ["./source/models/*"]
+    },
+    "esModuleInterop": true
+  },
+  "exclude": ["node_modules", "babel.config.js", "metro.config.js", "jest.config.js"]
 }
