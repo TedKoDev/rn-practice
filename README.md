@@ -159,3 +159,28 @@
         },
         ...
         }
+
+    RUN command -> npx husky .husky/pre-commit "npm run lint-staged"
+
+## react-navigation[https://reactnavigation.org/] - stack, tabs, top-tab
+
+    yarn add @react-navigation/native
+    yarn add react-native-screens react-native-safe-area-context
+    yarn add @react-navigation/native-stack
+    yarn add @react-navigation/bottom-tabs
+    yarn add @react-navigation/material-top-tabs react-native-tab-view
+    yarn add react-native-pager-view
+
+    npx pod-install ios
+
+    add in android :
+    MainActivity.kt ->
+    import android.os.Bundle;
+
+    class MainActivity: ReactActivity() {
+      // ...
+      override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(null)
+      }
+      // ...
+    }
