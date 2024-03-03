@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "249204800726",
+    "project_id": "rn-prac-3ec8d",
+    "storage_bucket": "rn-prac-3ec8d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:249204800726:android:ec04d9265dde9863191d77",
+        "android_client_info": {
+          "package_name": "com.taeandphil.rnprac"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_HlKLd8f2gf9AIR7-nAwn-qnA8PI5BC4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

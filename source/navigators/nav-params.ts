@@ -4,8 +4,11 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack'
 import APP_ROUTES from './routes'
 
 export type AppNavigationParams = {
+  // auth routes
   [APP_ROUTES.LOGIN]: undefined
   [APP_ROUTES.SIGNUP]: undefined
+  // home routes
+  [APP_ROUTES.HOME]: undefined
 }
 
 type SCREEN_TYPE = keyof AppNavigationParams

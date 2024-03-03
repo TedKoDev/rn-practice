@@ -1,5 +1,7 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, Button } from 'react-native'
+
+import { signup } from '@source/services/firebase/auth'
 
 export default SignupScreen
 
@@ -12,6 +14,13 @@ function SignupScreen() {
         alignItems: 'center',
       }}>
       <Text>SignupScreen</Text>
+      <Button
+        title="Signup"
+        onPress={() => {
+          console.log('Signup')
+          signup('test@test.test', 'password')
+        }}
+      />
     </View>
   )
 }

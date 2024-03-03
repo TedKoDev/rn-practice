@@ -264,3 +264,6 @@
 
      follow android setup guide
      folow is setup guide
+
+    set up auth
+    yarn add @react-native-firebase/auth
